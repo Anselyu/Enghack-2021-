@@ -15,8 +15,8 @@ class CheckIn:
                 if self.username in allLines[count]:
                     break
             information = allLines[count]
-            print(information.strip())
-            print(count)
+            custInfo = information.split()
+            return custInfo
 
     
     #adds the new customer information to the CustomerInfo.txt file
