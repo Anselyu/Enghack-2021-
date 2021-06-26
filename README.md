@@ -6,3 +6,10 @@ Idea: Bank application
 - display information
 - display current balance
 - display past transactions
+
+Classes: 
+- Main class
+- Bank class
+ - logic (withdrawals, deposits, add/remove customer, change customer info, print all info)
+ - customer class (holds customer info)
+  - getters, setters
