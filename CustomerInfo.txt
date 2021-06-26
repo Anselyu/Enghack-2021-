@@ -1,2 +1,2 @@
 kevin password123 0 100
-carl pass13 1 155
+Carl password 1 150

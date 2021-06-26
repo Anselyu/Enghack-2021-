@@ -14,7 +14,6 @@ with open("Enghack-2021-/CustomerInfo.txt", "r") as file_object:
             password = custInfo[1]
             bal = custInfo[3]
             bank.createCustomer(name, password, int(bal))
-            print(name + " " + password + " " + bal)
             count += 1
 
 def register():
@@ -34,7 +33,6 @@ def register():
 def login():
     tempUser = int(input("Please enter your customer ID:\n"))
     tempPassword = input("Please enter your password:\n")
-    loginCheck = CheckIn()
     global currID
     currID = tempUser
     print("Welcome " + bank.getName(int(currID)))
