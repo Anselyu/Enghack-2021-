@@ -4,17 +4,17 @@ from time import sleep
 
 bank = Bank()
 
-file = open("Enghack-2021-/CustomerInfo.txt", "r")
-allLines = file.readlines()
-count = -1
-for i in file:
-    count += 1
-    information = allLines[count]
-    custInfo = information.split()
-    name = custInfo[0]
-    password = custInfo[1]
-    bal = custInfo[3]
-    bank.createCustomer(name, password, int(bal))
+with open("Enghack-2021-/CustomerInfo.txt", "r") as file_object:
+        allLines = file_object.readlines()
+        count = -1
+        for i in allLines:
+            count += 1
+            information = allLines[count]
+            custInfo = information.split()
+            name = custInfo[0]
+            password = custInfo[1]
+            bal = custInfo[3]
+            bank.createCustomer(name, password, int(bal))
 
 def register():
     newName = input("Please enter your name: ")
