@@ -4,7 +4,7 @@ class Customer:
         self.custID = custID
         self.name = name 
         self.password = password
-        self.money = startingMoney
+        self.money = int(startingMoney)
 
     def setCustID(self, custID):
         self.custID = custID
@@ -16,9 +16,9 @@ class Customer:
         self.password = password
 
     def setMoney(self, moneyChange):
-        self.money += moneyChange
+        self.money += int(moneyChange)
 
-    def getCustID(self):
+    def getCustID(self):    
         return self.custID
 
     def getName(self): 
@@ -26,7 +26,7 @@ class Customer:
 
     def getPass(self): 
         return self.password
-        
+
     def getMoney(self):
         return self.money
 
