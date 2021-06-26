@@ -4,6 +4,18 @@ from time import sleep
 
 bank = Bank()
 
+file = open("Enghack-2021-/CustomerInfo.txt", "r")
+allLines = file.readlines()
+count = -1
+for i in file:
+    count += 1
+    information = allLines[count]
+    custInfo = information.split()
+    name = custInfo[0]
+    password = custInfo[1]
+    bal = custInfo[3]
+    bank.createCustomer(name, password, int(bal))
+
 def register():
     newName = input("Please enter your name: ")
     newPass = input("Please enter a password: ")
@@ -12,13 +24,14 @@ def register():
     bank.displayInfo(bank.getCustID())
     global currID 
     currID = bank.getCustID()
-    print("Welcome " + bank.getName(currID))
+    print("Welcome " + bank.getName(int(currID)))
 
 def login():
     tempUser = input("Please enter your customer ID:\n")
     tempPassword = input("Please enter your password:\n")
+    global currID
     currID = tempUser
-    print("Welcome " + bank.getName(currID))
+    print("Welcome " + bank.getName(int(currID)))
 
 # introduction text
 print("░█████╗░███████╗██╗░░██╗  ██████╗░░█████╗░███╗░░██╗██╗░░██╗")
