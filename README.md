@@ -9,7 +9,8 @@ Idea: Bank application
 
 Classes: 
 - Main class
+    - Interacts with the user
 - Bank class
-    - logic (withdrawals, deposits, add/remove customer, change customer info, print all info)
+    - logic (withdrawals, deposits, add customer, change customer info, print all info)
     - customer class (holds customer info)
-        - getters, setters
+        - getters, setters for customer name, password, ID, and balance. 
