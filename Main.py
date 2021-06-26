@@ -1,8 +1,8 @@
 import random
 from Bank import *
+from time import sleep
 
 bank = Bank()
-currID = 0
 
 def register():
     newName = input("Please enter your name: ")
@@ -10,12 +10,13 @@ def register():
     newBal = input("Please enter starting balance: ")
     bank.createCustomer(newName, newPass, newBal)
     bank.displayInfo(bank.getCustID())
+    global currID 
     currID = bank.getCustID()
     print("Welcome " + bank.getName(currID))
 
 def login():
-    tempUser = input("Please enter your customer ID")
-    tempPassword = input("Please enter your password")
+    tempUser = input("Please enter your customer ID:\n")
+    tempPassword = input("Please enter your password:\n")
     currID = tempUser
     print("Welcome " + bank.getName(currID))
 
@@ -41,7 +42,7 @@ else:
     login()
 
 while (choice != 7):
-
+    print("\n")
     print("Please select the function you would like to access:")
     print("1. Deposit")
     print("2. Withdraw")
@@ -55,6 +56,8 @@ while (choice != 7):
     if (choice == "1"):
         print("How much money would you like to deposit?")
         bank.deposit(currID, input())
+        sleep(1)
+
     elif (choice == "2"):
         print("How much money would you like to withdraw?")
         withdrawAmt = input()
@@ -64,10 +67,13 @@ while (choice != 7):
             withdrawAmt = input()
         
         bank.withdraw(currID, withdrawAmt)
+        sleep(1)
     elif (choice == "3"):
         bank.displayInfo(currID)
+        sleep(1)
     elif (choice == "4"):
         bank.displayBalance(currID)
+        sleep(1)
     elif (choice == "5"):
         print("What would you like to change?")
         print("1. Name")
@@ -85,6 +91,8 @@ while (choice != 7):
     elif (choice == "6"):
         print("Logging out, thank you for banking with us.")
         print("\n\n\n\n")
+        sleep(1)
+
         print("Please select one of the following options:")
         print("1. Sign in")
         print("2. Register")
