@@ -5,31 +5,33 @@ class Customer:
     location = ""
     name = ""
 
-    def __init__(self, custID, startingMoney, location, name):
+    def __init__(self, custID, name, password, startingMoney):
         self.custID = custID
-        self.money = startingMoney
-        self.location = location
         self.name = name 
+        self.password = password
+        self.money = startingMoney
 
-    def setMoney(self, moneyChange):
-        self.money += moneyChange
-
-    def setLocation(self, location):
-        self.location = location
+    def setCustID(self, custID):
+        self.custID = custID
 
     def setName(self, name):
         self.name = name
 
-    def getCustID (self):
+    def setPassword(self, password):
+        self.password = password
+
+    def setMoney(self, moneyChange):
+        self.money += moneyChange
+
+    def getCustID(self):
         return self.custID
 
-    def getMoney:
-        return money
+    def getName(self): 
+        return self.name
 
-    def getLocation: 
-        return location
+    def getPassword(self): 
+        return self.password
+        
+    def getMoney(self):
+        return self.money
 
-    def getName: 
-        return name
-
-    
