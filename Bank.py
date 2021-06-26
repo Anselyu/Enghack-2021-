@@ -2,7 +2,7 @@ from Customer import Customer
 #custID is for set up, custNum is the variable to determine which customer ID the operation is targeted to.
 class Bank: 
     custList = []
-    custID = 0;
+    custID = 0
     def __init__(self): #initialize class with all the values from the spreadsheet
         pass 
 
@@ -18,20 +18,23 @@ class Bank:
         customerCurrentBalance = custList[custNum].getMoney()
         custList[custNum].setMoney(customerCurrentBalance - amount)
 
-    def changeInfo(self, custNum, newName, newPass): #Change user's name and pass
+    def changeName(self, custNum, newName): #Change user's name
         custList[custNum].setName(newName)
+
+    def changePass(self, custNum, newPass): #Change user's password
         custList[custNum].setPass(newPass)
     
     def displayBalance(self, custNum): #Display user's balance
-        print("Hi, your current balance is " + custList[custNum].getBalance() + "$")
+        print("Hi, your current balance is " + custList[custNum].getMoney() + "$")
 
-    def displayName(self, custNum): #DIsplay user's name 
+    def displayInfo(self, custNum): #DIsplay user's name 
         print("Name: " + custList[custNum].getName() + "ID: " + custList[custNum].getCustID())
-
-    def displayTransactionHistory(self, custNum): #Display user's transaction history
-        pass #need to make a list of the transsaction history first
     
+    def getCustID(self):
+        return (custID - 1)
 
+    def getMoney(self, custNum):
+        return custList[custNum].getMoney()
         
         
     
