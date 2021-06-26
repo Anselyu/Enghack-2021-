@@ -1,10 +1,5 @@
 class Customer: 
 
-    custID = 0
-    money = 0
-    location = ""
-    name = ""
-
     def __init__(self, custID, name, password, startingMoney):
         self.custID = custID
         self.name = name 
@@ -17,7 +12,7 @@ class Customer:
     def setName(self, name):
         self.name = name
 
-    def setPassword(self, password):
+    def setPass(self, password):
         self.password = password
 
     def setMoney(self, moneyChange):
@@ -29,7 +24,7 @@ class Customer:
     def getName(self): 
         return self.name
 
-    def getPassword(self): 
+    def getPass(self): 
         return self.password
         
     def getMoney(self):
