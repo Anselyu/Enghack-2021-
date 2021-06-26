@@ -1,1 +1,3 @@
-hey guys what's up it's eric here with my first git commit!
+hey guys what's up it's eric here with my first git commit
+
+alright now that this works i'm going to continue this text file, and then delete this
