@@ -18,17 +18,18 @@ class Bank:
         customerCurrentBalance = custList[custNum].getMoney()
         custList[custNum].setMoney(customerCurrentBalance - amount)
 
-    def changeInfo(self, newName, newPass): #Change user's name and pass
-        pass
+    def changeInfo(self, custNum, newName, newPass): #Change user's name and pass
+        custList[custNum].setName(newName)
+        custList[custNum].setPass(newPass)
     
     def displayBalance(self, custNum): #Display user's balance
-        pass
+        print(custList[custNum].getBalance())
 
     def displayName(self, custNum): #DIsplay user's name 
-        pass
+        print(custList[custNum].getName())
 
     def displayTransactionHistory(self, custNum): #Display user's transaction history
-        pass
+        pass #need to make a list of the transsaction history first
     
 
         
