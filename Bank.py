@@ -8,7 +8,6 @@ class Bank:
     def createCustomer(self, name, password, startingBalance):
         self.custList.append(Customer(self.custID, name, password, startingBalance)) # Customer array, super wack pls fix. Add starting parameters
         self.custID += 1; #this counters the customer ID 
-        print(self.custList)
 
     def deposit(self, custNum, amount): #Change user's balance by a positive amount 
         customerCurrentBalance = self.custList[custNum].getMoney()

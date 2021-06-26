@@ -16,8 +16,6 @@ with open("Enghack-2021-/CustomerInfo.txt", "r") as file_object:
             bank.createCustomer(name, password, int(bal))
             print(name + " " + password + " " + bal)
             count += 1
-            
-
 
 def register():
     newName = input("Please enter your name: ")
@@ -25,13 +23,18 @@ def register():
     newBal = input("Please enter starting balance: ")
     bank.createCustomer(newName, newPass, newBal)
     bank.displayInfo(bank.getCustID())
+    
     global currID 
     currID = bank.getCustID()
     print("Welcome " + bank.getName(int(currID)))
 
+    with open("Enghack-2021-/CustomerInfo.txt", "a") as file_object:
+        file_object.write(newName + " " + newPass + " " + str(currID) + " " + str(newBal) + "\n")
+
 def login():
     tempUser = int(input("Please enter your customer ID:\n"))
     tempPassword = input("Please enter your password:\n")
+    loginCheck = CheckIn()
     global currID
     currID = tempUser
     print("Welcome " + bank.getName(int(currID)))
@@ -120,5 +123,10 @@ while (choice != 7):
             login()
     elif (choice == "7"):
         print("Thank you for coming to CEK Bank, please come again!")
-        # Save all the info here
+        
+        open("Enghack-2021-/CustomerInfo.txt", "w").close()
+        for x in range(0, bank.getCustID() + 1):
+             with open("Enghack-2021-/CustomerInfo.txt", "a") as file_object:
+                file_object.write(bank.custList[x].getName() + " " + bank.custList[x].getPass() + " " + str(bank.custList[x].getCustID()) + " " + str(bank.custList[x].getMoney()) + "\n")
+
         exit()
