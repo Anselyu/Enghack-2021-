@@ -1,5 +1,9 @@
 import random
+
 from Bank import *
+
+bank = Bank()
+
 
 def register():
     newID = random.randint(1000000000000000, 9999999999999999)
