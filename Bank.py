@@ -23,10 +23,10 @@ class Bank:
         custList[custNum].setPass(newPass)
     
     def displayBalance(self, custNum): #Display user's balance
-        print(custList[custNum].getBalance())
+        print("Hi, your current balance is " + custList[custNum].getBalance() + "$")
 
     def displayName(self, custNum): #DIsplay user's name 
-        print(custList[custNum].getName())
+        print("Name: " + custList[custNum].getName() + "ID: " + custList[custNum].getCustID())
 
     def displayTransactionHistory(self, custNum): #Display user's transaction history
         pass #need to make a list of the transsaction history first
